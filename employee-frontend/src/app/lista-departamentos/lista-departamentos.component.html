@@ -1,0 +1,25 @@
+<h2>Lista Departamentos</h2>
+<table class="table table-striped">
+    <thead class="table table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let departamento of departamentos">
+         <td>{{departamento.nombre}}</td>
+         <td>{{departamento.descripcion}}</td>
+         <td>{{departamento.telefono}}</td>
+         <td>{{departamento.estado}}</td>
+         <td>
+             <button (click)="actualizarDepartamentos(departamento.id)" class="btn btn-info">Editar</button>
+             <button (click)="eliminarDepartamentos(departamento.id)" class="btn btn-danger" style="margin-left : 10px">Eliminar</button>
+             <button (click)="verDetallesDepartamentos(departamento.id)" class="btn btn-primary" style="margin-left : 10px">Ver Detalles</button>
+         </td>
+    </tr>
+</tbody>
+</table>

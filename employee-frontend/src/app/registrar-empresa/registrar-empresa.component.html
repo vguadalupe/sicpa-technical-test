@@ -1,0 +1,111 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de Empresa</h3>
+    <form (ngSubmit)= "onSubmit()" #empresaForm = "ngForm">
+      <div class="form-group">
+        <label>Nombre : </label>
+        <input type = "text"
+        class="form-control"
+        id = "nombre"
+        [(ngModel)] = "empresa.nombre"
+        name = "nombre"
+        required
+        minlength="2"
+        maxlength="25"
+        placeholder="Digite nombre"
+        #nombre = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+          <div *ngIf = "nombre.errors.required">
+            Digite su nombre por favor
+          </div>
+          <div *ngIf = "nombre.errors.minlength">
+            El nombre tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "nombre.errors.maxlength">
+            El nombre tiene que tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Dirección : </label>
+        <input type = "text"
+        class="form-control"
+        id = "direccion"
+        [(ngModel)] = "empresa.direccion"
+        name = "direccion"
+        required
+        minlength="4"
+        maxlength="25"
+        placeholder="Digite direccion"
+        #direccion = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "direccion.invalid && (direccion.dirty || direccion.touched)">
+          <div *ngIf = "direccion.errors.required">
+            Digite su direccion por favor
+          </div>
+          <div *ngIf = "direccion.errors.minlength">
+            El direccion tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "nombre.errors.maxlength">
+            El direccion tiene que tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+ 
+   
+      <div class="form-group">
+        <label>telefono : </label>
+        <input type = "text"
+        class="form-control"
+        id = "telefono"
+        [(ngModel)] = "empresa.telefono"
+        name = "telefono"
+        required
+        minlength="4"
+        maxlength="15"
+        placeholder="Digite su telefono "
+        #telefono = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "telefono.invalid && (telefono.dirty || telefono.touched)">
+          <div *ngIf = "telefono.errors.required">
+            Digite su telefono por favor
+          </div>
+          <div *ngIf = "telefono.errors.minlength">
+            El telefono tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "telefono.errors.maxlength">
+            El telefono tiene que tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+       
+      <div class="form-group">
+        <label>Estado : </label>
+        <input type = "text"
+        class="form-control"
+        id = "estado"
+        [(ngModel)] = "empresa.estado"
+        name = "estado"
+        required
+        minlength="2"
+        maxlength="10"
+        placeholder="Digite su estado "
+        #estado = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "estado.invalid && (estado.dirty || estado.touched)">
+          <div *ngIf = "estado.errors.required">
+            Digite su estado por favor
+          </div>
+          <div *ngIf = "estado.errors.minlength">
+            El estado tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "estado.errors.maxlength">
+            El estado tiene que tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+  
+      <button class="btn btn-success" [disabled]= "!empresaForm.form.valid">Guardar</button>
+    </form>
+  </div>
+  

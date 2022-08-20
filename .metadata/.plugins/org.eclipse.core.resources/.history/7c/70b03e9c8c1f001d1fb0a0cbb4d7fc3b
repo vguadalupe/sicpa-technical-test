@@ -1,0 +1,54 @@
+package com.sicpa.employees.modelo;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "departments")
+public class Departamento {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Id;
+
+	@Column(name = "nombre", length = 60, nullable = false)
+	private String nombre;
+
+	@Column(name = "descripcion", length = 60, nullable = false)
+	private String descripcion;
+	
+	@Column(name = "telefono", length = 60, nullable = false)
+	private String telefono;
+	
+	@Column(name = "estado", length = 60, nullable = false)
+	private String estado;
+	
+	@Column(name = "creado_por", length = 60, nullable = true)
+	private String creado_por;
+	
+    @Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "creado_fecha", length = 60, nullable = true)
+	private Date creado_fecha;
+	
+	@Column(name = "modificado_por", length = 60, nullable = true)
+	private String modificado_por;
+	
+    @Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "modificado_fecha", length = 60, nullable = true)
+	private Date modificado_fecha;
+
+	public Departamento() {
+
+	}
+ 
+	
+	
+}
