@@ -1,0 +1,104 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edición de departamento</h3>
+    <form (ngSubmit)= "onSubmit()" #departamentoForm = "ngForm">
+      <div class="form-group">
+        <label>Nombre : </label>
+        <input type = "text"
+        class="form-control"
+        id = "nombre"
+        [(ngModel)] = "departamento.nombre"
+        name = "nombre"
+        required
+        minlength="4"
+        maxlength="10"
+        placeholder="Digite su nombre "
+        #nombre = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+          <div *ngIf = "nombre.errors.required">
+            Digite su nombre por favor
+          </div>
+          <div *ngIf = "nombre.errors.minlength">
+            El nombre tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "nombre.errors.maxlength">
+            El nombre tiene que tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Apellido : </label>
+        <input type = "text"
+        class="form-control"
+        id = "apellido"
+        [(ngModel)] = "departamento.descripcion"
+        name = "apellido"
+        required
+        minlength="4"
+        maxlength="10"
+        placeholder="Digite su descripcion "
+        #descripcion = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+          <div *ngIf = "descripcion.errors.required">
+            Digite su descripcion por favor
+          </div>
+          <div *ngIf = "descripcion.errors.minlength">
+            El apellido tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "descripcion.errors.maxlength">
+            El apellido tiene que tener como maximo 35 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>telefono : </label>
+        <input type = "telefono"
+        class="form-control"
+        id = "telefono"
+        [(ngModel)] = "departamento.telefono"
+        name = "telefono"
+         required
+        placeholder="Digite su telefono "
+        #telefono = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "telefono.invalid && (telefono.dirty || telefono.touched)">
+          <div *ngIf = "telefono.errors.required">
+            Digite su telefono por favor
+          </div>
+          <div *ngIf = "telefono.errors.pattern">
+            Por favor digite el número de teléfono
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>estado : </label>
+        <input type = "text"
+        class="form-control"
+        id = "estado"
+        [(ngModel)] = "departamento.estado"
+        name = "estado"
+        required
+        minlength="4"
+        maxlength="10"
+        placeholder="Digite su estado "
+        #estado = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "estado.invalid && (estado.dirty || estado.touched)">
+          <div *ngIf = "estado.errors.required">
+            Digite su nombre por favor
+          </div>
+          <div *ngIf = "estado.errors.minlength">
+            El estado tiene que contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "estado.errors.maxlength">
+            El estado tiene que tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+  
+      <button class="btn btn-success" [disabled]= "!departamentoForm.form.valid">Guardar</button>
+    </form>
+  </div>
+  
